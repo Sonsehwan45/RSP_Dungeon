@@ -12,4 +12,14 @@ public class Tanker extends Player {
         this.currentMoney = 100;
         this.potionCount = 3;
     }
+
+    //공격하기(이긴 경우)
+    public void attack(int currentHP){
+
+    }
+
+    //회복(비긴 경우)
+    public void heal(){
+
+    }
 }
