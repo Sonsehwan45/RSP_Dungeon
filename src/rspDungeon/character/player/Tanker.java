@@ -1,6 +1,6 @@
-package rspDungeon.character;
+package rspDungeon.character.player;
 
-public class Tanker extends BaseCharcacter{
+public class Tanker extends Player {
     public Tanker(){
         this.name = "Tanker";
 

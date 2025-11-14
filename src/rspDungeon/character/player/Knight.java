@@ -1,6 +1,6 @@
-package rspDungeon.character;
+package rspDungeon.character.player;
 
-public class Knight extends BaseCharcacter{
+public class Knight extends Player {
 
     public Knight() {
         this.name = "Knight";
