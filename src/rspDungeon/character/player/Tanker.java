@@ -1,7 +1,10 @@
 package rspDungeon.character.player;
 
+import java.util.Scanner;
+
 public class Tanker extends Player {
-    public Tanker(){
+    public Tanker(Scanner sc) {
+        super(sc);
         this.name = "Tanker";
 
         this.maxHP = 100;

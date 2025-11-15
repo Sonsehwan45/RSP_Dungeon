@@ -36,6 +36,7 @@ public abstract class Player extends Character {
         return choice;
     }
 
+
     //포션 사용
     public void usePotion(){
         if(potionCount == 0){

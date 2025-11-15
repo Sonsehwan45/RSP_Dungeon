@@ -1,8 +1,11 @@
 package rspDungeon.character.player;
 
+import java.util.Scanner;
+
 public class Berserker extends Player {
 
-    public Berserker(){
+    public Berserker(Scanner sc){
+        super(sc);
         this.name = "Berserker";
 
         this.maxHP = 60;
@@ -12,5 +15,13 @@ public class Berserker extends Player {
         this.level = 1;
         this.currentMoney = 100;
         this.potionCount = 1;
+    }
+
+    public void attack(int currentHP){
+
+    }
+
+    public void heal(){
+
     }
 }
