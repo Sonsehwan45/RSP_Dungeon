@@ -1,22 +1,28 @@
 package rspDungeon.character.monster;
 
+import rspDungeon.character.Character;
+
 public class Slime extends Monster{
     public Slime(int stage){
         super(stage);
         this.name = "Slime";
-        this.maxHP = 80;
-        this.currentHP = 80;
-        this.power = 10;
-        this.resilience = 0;
+        this.maxHP = 50 * stage;
+        this.currentHP = 50 * stage;
+        this.power = 10 + (2 * stage);
+        this.resilience = 10 + stage;
     }
 
-    //공격하기(이긴 경우)
-    public void attack(int currentHP){
-
+    @Override
+    public void attack(Character target) {
+        target.currentHP -= power;
     }
 
     //회복(비긴 경우)
     public void heal(){
-
+        if((currentHP + resilience/2) < maxHP){
+            currentHP += resilience/2;
+        }else{
+            currentHP = maxHP;
+        }
     }
 }

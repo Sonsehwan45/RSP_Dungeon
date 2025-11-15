@@ -1,5 +1,7 @@
 package rspDungeon.character.player;
 
+import rspDungeon.character.Character;
+
 import java.util.Scanner;
 
 public class Knight extends Player {
@@ -18,12 +20,27 @@ public class Knight extends Player {
     }
 
     //공격하기(이긴 경우)
-    public void attack(int currentHP){
-
+    @Override
+    public void attack(Character target) {
+        target.currentHP -= power;
     }
 
     public void heal(){
-
+        if((currentHP + resilience/2) < maxHP){
+            currentHP += resilience/2;
+        }else{
+            currentHP = maxHP;
+        }
     }
 
+    public void levelUp(){
+        maxHP += 10;
+        if(currentHP + 10 < maxHP){
+            currentHP += 10;
+        }else{
+            currentHP = maxHP;
+        }
+        power += 10;
+        resilience += 10;
+    }
 }

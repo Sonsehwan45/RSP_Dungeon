@@ -46,4 +46,9 @@ public abstract class Player extends Character {
             potionCount--;
         }
     }
+
+    //공격하기(이긴 경우)
+    public abstract void attack(Character target);
+
+    public abstract void levelUp();
 }

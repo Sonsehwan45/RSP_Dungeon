@@ -14,7 +14,7 @@ public abstract class Character {
     public abstract int choiceRSP();
 
     //공격하기(이긴 경우)
-    public abstract void attack(int currentHP);
+    public abstract void attack(Character target);
 
     //회복(비긴 경우)
     public abstract void heal();
