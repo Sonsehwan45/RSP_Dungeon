@@ -19,5 +19,5 @@ public abstract class Map {
     }
 
     //던전 플레이 진행
-    public abstract void dungeonPlay(Player player);
+    public abstract boolean dungeonPlay(Player player);
 }
