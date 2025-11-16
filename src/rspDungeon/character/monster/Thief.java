@@ -18,16 +18,33 @@ public class Thief extends Monster {
         target.currentHP -= power;
         Player player = (Player)target;
 
-        if(player.currentMoney > 0 && player.currentMoney < 10){
-            System.out.println("소지금 " + player.currentMoney + "원을 훔칩니다.");
-            player.currentMoney = 0;
-        }
-        else if(player.currentMoney >= 10){
-            player.currentMoney -= 10;
-            System.out.println("소지금 10원을 훔칩니다.");
+        if(target.currentHP - power <= 0){
+            target.currentHP = 0;
+            if(player.currentMoney > 0 && player.currentMoney < 10){
+                System.out.println("소지금 " + player.currentMoney + "원을 훔칩니다.");
+                player.currentMoney = 0;
+            }
+            else if(player.currentMoney >= 10){
+                player.currentMoney -= 10;
+                System.out.println("소지금 10원을 훔칩니다.");
+            }
+            else{
+                System.out.println("도둑이 돈을 훔치려 했지만 땡전 한 푼 없습니다!");
+            }
         }
         else{
-            System.out.println("도둑이 돈을 훔치려 했지만 땡전 한 푼 없습니다!");
+            target.currentHP -= power;
+            if(player.currentMoney > 0 && player.currentMoney < 10){
+                System.out.println("소지금 " + player.currentMoney + "원을 훔칩니다.");
+                player.currentMoney = 0;
+            }
+            else if(player.currentMoney >= 10){
+                player.currentMoney -= 10;
+                System.out.println("소지금 10원을 훔칩니다.");
+            }
+            else{
+                System.out.println("도둑이 돈을 훔치려 했지만 땡전 한 푼 없습니다!");
+            }
         }
     }
 

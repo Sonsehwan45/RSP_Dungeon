@@ -14,7 +14,12 @@ public class Golam extends Monster {
 
     @Override
     public void attack(Character target) {
-        target.currentHP -= power;
+        if(target.currentHP - power <= 0){
+            target.currentHP = 0;
+        }
+        else{
+            target.currentHP -= power;
+        }
     }
 
     @Override

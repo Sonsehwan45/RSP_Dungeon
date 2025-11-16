@@ -12,7 +12,7 @@ public abstract class Player extends Character {
     public int currentMoney; // 소지금
     public int potionCount; //포션 수
 
-    private Scanner sc;
+    public Scanner sc;
 
     public Player(Scanner sc) {
         this.sc = sc;
@@ -35,7 +35,6 @@ public abstract class Player extends Character {
         }
         return choice;
     }
-
 
     //포션 사용
     public void usePotion(){
