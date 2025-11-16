@@ -12,9 +12,30 @@ public class Slime extends Monster{
         this.resilience = 10 + stage;
     }
 
+    public String chageRSP(int choiceRSP){
+        String result = "";
+        switch(choiceRSP) {
+            case 1:
+                result =  "가위";
+                break;
+            case 2:
+                result = "바위";
+                break;
+            case 3:
+                result = "보";
+                break;
+        }
+        return result;
+    }
+
     @Override
     public void attack(Character target) {
-        target.currentHP -= power;
+        if(target.currentHP - power <= 0){
+            target.currentHP = 0;
+        }
+        else{
+            target.currentHP -= power;
+        }
     }
 
     //회복(비긴 경우)
