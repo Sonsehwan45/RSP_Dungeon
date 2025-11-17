@@ -18,9 +18,25 @@ public abstract class Player extends Character {
         this.sc = sc;
     }
 
+    public abstract void showImage();
+
+    public void showInfo(){
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println(name + "의 레벨 : " + level);
+        System.out.println("총HP: " + maxHP);
+        System.out.println("현재 HP: " + currentHP);
+        System.out.println("공격력: " + power);
+        System.out.println("회복력: " + resilience);
+        System.out.println("소지금: " + currentMoney);
+        System.out.println("포션 : " + potionCount +"개");
+        System.out.println("------------------------------------------------------------------------");
+    }
+
     @Override
     public int choiceRSP(){
-        System.out.println("[1]가위, [2]바위, [3]보 를 선택하세요. (숫자로 입력하세요)");
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("[1] 가위, [2] 바위, [3] 보");
+        System.out.print("원하는 선택지의 번호를 입력하세요 : ");
         int choice = sc.nextInt();
         switch(choice) {
             case 1:
@@ -33,17 +49,25 @@ public abstract class Player extends Character {
                 System.out.println("보를 선택하셨습니다.");
                 break;
         }
+        System.out.println("------------------------------------------------------------------------");
         return choice;
     }
 
     //포션 사용
     public void usePotion(){
-        if(potionCount == 0){
-            System.out.println("포션이 없습니다.");
-        }else{
-            currentHP += 50;
+        System.out.println("------------------------------------------------------------------------");
+            if(currentHP + 50 > maxHP){
+                currentHP = maxHP;
+            }else{
+                currentHP += 50;
+            }
             potionCount--;
-        }
+            if(potionCount < 0){
+                potionCount = 0;
+            }
+            System.out.println("HP를 50 회복합니다.");
+            System.out.println(name + "의 HP : " + currentHP);
+        System.out.println("------------------------------------------------------------------------");
     }
 
     //공격하기(이긴 경우)

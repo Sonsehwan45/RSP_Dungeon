@@ -10,6 +10,9 @@ public abstract class Character {
     public int power; //공격력
     public int resilience; //회복력
 
+    //도트 이미지 출력
+    public abstract void showImage();
+
     //가위, 바위, 보 선택
     public abstract int choiceRSP();
 

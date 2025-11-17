@@ -15,7 +15,7 @@ public abstract class Map {
 
     // 던전 정보 출력
     public void showInfo(){
-        System.out.println("--- [" + this.stage + "단계: " + this.name + "] ---");
+        System.out.println("--------------------[" + this.stage + "단계: " + this.name + "]--------------------");
     }
 
     //던전 플레이 진행
